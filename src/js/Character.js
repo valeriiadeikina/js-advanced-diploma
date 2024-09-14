@@ -13,12 +13,17 @@
  * vampire
  */
 export default class Character {
-  constructor(level, type = 'generic') {
+  constructor(level, type = "generic") {
     this.level = level;
     this.attack = 0;
     this.defence = 0;
     this.health = 50;
     this.type = type;
+
+    if (new.target === Character) {
+      throw new Error("must not be called with new");
+    }
+
     // TODO: выбросите исключение, если кто-то использует "new Character()"
   }
 }
