@@ -1,9 +1,9 @@
 import Character from "../Character.js";
 
-export default class Magician extends Character{
-    constructor(level, attack, defence, health, type) {
-        super(level, attack, defence, health, type);
-        this.attack = 10;  
-        this.defence = 40;
-    }
+export default class Magician extends Character {
+  constructor(level, attack = 10, defence = 40) {
+    super(level, "magician");
+    this.attack = attack;
+    this.defence = defence;
+  }
 }

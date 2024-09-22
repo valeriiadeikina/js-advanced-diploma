@@ -1,10 +1,10 @@
 import Team from "./Team.js";
 import Bowman from "./characters/Bowman.js";
-import Daemon from "./characters/Bowman.js";
-import Magician from "./characters/Bowman.js";
-import Swordsman from "./characters/Bowman.js";
-import Undead from "./characters/Bowman.js";
-import Vampire from "./characters/Bowman.js";
+import Daemon from "./characters/Daemon.js";
+import Magician from "./characters/Magician.js";
+import Swordsman from "./characters/Swordsman.js";
+import Undead from "./characters/Undead.js";
+import Vampire from "./characters/Vampire.js";
 
 /**
  * Формирует экземпляр персонажа из массива allowedTypes со
@@ -19,7 +19,6 @@ import Vampire from "./characters/Bowman.js";
 export function* characterGenerator(allowedTypes, maxLevel) {
   const randomType =
     allowedTypes[Math.floor(Math.random() * allowedTypes.length)];
-
   const randomLevel = Math.floor(Math.random() * maxLevel) + 1;
   let newCharacter;
 
@@ -60,6 +59,7 @@ export function generateTeam(allowedTypes, maxLevel, characterCount) {
   for (let i = 0; i < characterCount; i++) {
     const newCharacter = characterGenerator(allowedTypes, maxLevel).next()
       .value;
+
     team.push(newCharacter);
   }
 
