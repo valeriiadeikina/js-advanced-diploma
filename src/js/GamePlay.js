@@ -237,13 +237,6 @@ export default class GamePlay {
     this.boardEl.style.cursor = cursor;
   }
 
-// setCursorToMove (index, cursor) {
-//   this.boardEl.style.cursor = cursor;
-//   this.cells[index].classList.add("selected", `selected-${green}`);
-// }
-
-
- 
   checkBinding() {
     if (this.container === null) {
       throw new Error("GamePlay not bind to DOM");
